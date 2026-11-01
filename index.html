@@ -41,9 +41,9 @@
 <section><div class="wrap">
   <h2>Screenshots</h2>
   <div class="shots">
-    <figure class="shot"><img src="shots/cctv.jpg" alt="CCTV camera view of traffic on the M66" loading="lazy"><figcaption>Pan, tilt and zoom the roadside CCTV</figcaption></figure>
-    <figure class="shot"><img src="shots/desk.jpg" alt="Control desk with the road map, gantry signals and live incidents" loading="lazy"><figcaption>Set signals and run incidents from the desk</figcaption></figure>
-    <figure class="shot"><img src="shots/fog.jpg" alt="Thick fog under a gantry on the M66" loading="lazy"><figcaption>Fog, ice, rain and night shifts</figcaption></figure>
+    <figure class="shot"><a href="shots/full/cctv.jpg" class="zoom"><img src="shots/cctv.jpg" alt="CCTV camera view of traffic on the M66" loading="lazy"></a><figcaption>Pan, tilt and zoom the roadside CCTV</figcaption></figure>
+    <figure class="shot"><a href="shots/full/desk.jpg" class="zoom"><img src="shots/desk.jpg" alt="Control desk with gantry signals and the motorway map down the right" loading="lazy"></a><figcaption>Set signals and run incidents from the desk</figcaption></figure>
+    <figure class="shot"><a href="shots/full/fog.jpg" class="zoom"><img src="shots/fog.jpg" alt="Thick fog under a gantry on the M66" loading="lazy"></a><figcaption>Fog, ice, rain and night shifts</figcaption></figure>
   </div>
 </div></section>
 
@@ -62,5 +62,12 @@
   <span>© 2026 Smartway. Sold through Lemon Squeezy, our reseller and merchant of record.</span>
   <span><a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a> · <a href="refunds.html">Refunds</a> · <a href="mailto:plaztikman@live.com">plaztikman@live.com</a></span>
 </div></footer>
+<div id="viewer" hidden><button type="button" aria-label="Close">&times;</button><img alt=""></div>
+<script>
+(function(){var v=document.getElementById('viewer'),im=v.querySelector('img');
+function close(){v.hidden=true;im.src='';}
+document.querySelectorAll('a.zoom').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();im.src=a.href;im.alt=a.querySelector('img').alt;v.hidden=false;});});
+v.addEventListener('click',close);document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});})();
+</script>
 </body>
 </html>
