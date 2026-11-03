@@ -45,6 +45,7 @@ ul.specs { padding-left: 20px; color: var(--muted); }
 footer { border-top: 1px solid var(--line); background: var(--panel); padding: 28px 0; color: var(--muted); font-size: 14px; }
 footer .wrap { display: flex; flex-wrap: wrap; gap: 10px 22px; justify-content: space-between; }
 footer a { color: var(--muted); }
+footer .rights { flex-basis: 100%; margin: 6px 0 0; font-size: 13px; }
 @media (max-width: 560px) { nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 4px 12px; } nav a { margin-left: 0; } .aspect { width: 56px; height: 56px; font-size: 22px; } .aspect.ring { width: 56px; height: 56px; } .aspect.red { font-size: 34px; } }
 
 .shot a.zoom { display: block; cursor: zoom-in; }
