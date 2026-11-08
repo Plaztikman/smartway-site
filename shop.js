@@ -3,7 +3,7 @@
 //   worker:      the Cloudflare Worker that issues licence keys (https://smartway-shop.<you>.workers.dev).
 //   download:    where buyers download the game.
 var SHOP = {
-  paymentLink: "",
+  paymentLink: "https://buy.stripe.com/7sY14ng8V3OV3em2s73sI00",
   worker: "https://smartway-shop.plaztikman.workers.dev",
   download: ""   // link to the game download, shown on the thank-you page
 };
