@@ -113,3 +113,18 @@ h1 { line-height: 1.2; font-size: clamp(28px, 4.6vw, 46px); }
 .btn { color: #031412; }
 header.top { background: rgba(5,6,7,.9); }
 .eyebrow { letter-spacing: .3em; }
+
+header.top { border-bottom-color: rgba(124,224,211,.45); }
+.studio-head { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+.studio-head img { height: 22px; width: auto; display: block; }
+.studio-head span { color: var(--muted); font-size: 11px; letter-spacing: .45em; text-transform: uppercase; }
+.studio-head:hover span { color: var(--amber); }
+.studio-line { display: flex; align-items: center; gap: 22px; }
+.hero-brand { font-size: 22px; gap: 14px; margin-bottom: 26px; }
+.hero-brand .x { width: 36px; height: 36px; font-size: 20px; }
+@media (max-width: 560px) {
+  header.top .wrap { height: auto; min-height: 60px; padding-top: 8px; padding-bottom: 8px; }
+  .studio-head img { height: 15px; } .studio-head { gap: 8px; } .studio-head span { font-size: 9px; letter-spacing: .3em; }
+  .studio-line { flex-direction: column; align-items: flex-start; gap: 6px; }
+  nav { max-width: 55%; }
+}
