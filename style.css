@@ -97,3 +97,14 @@ section[id] { scroll-margin-top: 64px; }
 .room.host { border-style: dashed; background: transparent; }
 .room.host .join { background: transparent; color: var(--green); border: 1px solid var(--green); }
 @media (max-width: 820px) { .mp-grid { grid-template-columns: 1fr; } }
+
+/* MVALIX Interactive branding */
+.studio-foot { flex-basis: 100%; display: flex; align-items: center; gap: 14px; padding-bottom: 16px; margin-bottom: 4px; border-bottom: 1px solid var(--line); color: var(--muted); text-decoration: none; }
+.studio-foot img { height: 20px; width: auto; display: block; }
+.studio-foot span { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; }
+.studio-foot:hover span { color: #7ce0d3; }
+header.top { background: #000; border-bottom: 1px solid rgba(124,224,211,.6); }
+.lockup { display: flex; align-items: center; gap: 14px; }
+.lockup .studio img { height: 18px; width: auto; display: block; }
+.lockup .sep { width: 1px; height: 22px; background: #2b3540; }
+@media (max-width: 560px) { .lockup .studio img { height: 13px; } .lockup { gap: 10px; } .brand .x { display: none; } }
