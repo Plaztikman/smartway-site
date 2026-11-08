@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thank You · Smartway</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="index.html"><span class="x">✕</span> SMARTWAY</a>
+  <nav><a href="index.html#features">Features</a><a href="index.html#buy">Buy</a><a href="refunds.html">Refunds</a><a href="mailto:plaztikman@live.com">Contact</a></nav>
+</div></header>
+<main class="wrap thanks">
+<h1>Thanks for buying Smartway</h1>
+<p id="status" class="notice">Getting your licence key…</p>
+<div id="result" class="keybox" hidden>
+  <div class="label">Your licence key</div>
+  <div class="key" id="key"></div>
+  <button type="button" id="copy">Copy key</button>
+  <p>When the game asks, type this email address and the key:<br><span class="email" id="email"></span></p>
+  <p class="notice">We've emailed the key to you too, so you don't need to write it down. If it isn't in your inbox in a few minutes, check your junk folder.</p>
+</div>
+<p id="download" hidden><a class="btn" id="download-link" href="#">Download Smartway</a></p>
+<p>One key activates the game on one PC. If you change PC, or anything goes wrong, email <a href="mailto:plaztikman@live.com">plaztikman@live.com</a>.</p>
+</main>
+<footer><div class="wrap">
+  <span>Sold by Matt Hillyard. Secure payments by Stripe.</span>
+  <span><a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a> · <a href="refunds.html">Refunds</a> · <a href="credits.html">Credits</a> · <a href="mailto:plaztikman@live.com">plaztikman@live.com</a></span>
+  <p class="rights">© 2026 Matt Hillyard. All Rights Reserved.</p>
+</div></footer>
+<script src="shop.js"></script>
+<script>
+(function () {
+  var status = document.getElementById("status");
+  function say(text, error) { status.textContent = text; status.className = "notice" + (error ? " error" : ""); status.hidden = false; }
+  if (SHOP.download) { document.getElementById("download-link").href = SHOP.download; document.getElementById("download").hidden = false; }
+  var session = new URLSearchParams(location.search).get("session");
+  if (!session || !SHOP.worker) { say("We couldn't find your order on this page. Your key has been emailed to you. If it doesn't arrive, email plaztikman@live.com."); return; }
+  var tries = 0;
+  function load() {
+    fetch(SHOP.worker.replace(/\/$/, "") + "/stripe/key?session=" + encodeURIComponent(session))
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        if (d.key) {
+          document.getElementById("key").textContent = d.key;
+          document.getElementById("email").textContent = d.email;
+          document.getElementById("result").hidden = false;
+          status.hidden = true;
+        } else if (d.pending && tries++ < 10) { say(d.message); setTimeout(load, 6000); }
+        else say(d.message || d.error || "Something went wrong. Your key will be emailed to you.", !d.pending);
+      })
+      .catch(function () {
+        if (tries++ < 3) setTimeout(load, 3000);
+        else say("We couldn't reach the key server just now. Your key has been emailed to you. If it doesn't arrive, email plaztikman@live.com.", true);
+      });
+  }
+  load();
+  document.getElementById("copy").addEventListener("click", function () {
+    var b = this; navigator.clipboard.writeText(document.getElementById("key").textContent).then(function () { b.textContent = "Copied"; setTimeout(function () { b.textContent = "Copy key"; }, 2000); });
+  });
+})();
+</script>
+</body>
+</html>

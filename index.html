@@ -18,8 +18,8 @@
   <h1>Smartway:<br>UK Motorway Traffic Controller</h1>
   <p class="lead">Take the desk at a smart motorway control room. Set the gantry speeds, close lanes with a Red X, send Traffic Officers, and keep any real British motorway moving and safe through a whole shift, on your own or with friends.</p>
   <div class="cta" id="buy">
-    <a class="btn" href="mailto:plaztikman@live.com?subject=Buying%20Smartway">Buy Smartway</a>
-    <span class="price"><b>£9.99</b> · one-off payment, licence key by email</span>
+    <a class="btn" id="buy-button" href="mailto:plaztikman@live.com?subject=Buying%20Smartway">Buy Smartway</a>
+    <span class="price"><b>£9.99</b> · one-off payment, licence key straight away</span>
   </div>
   <div class="gantry" aria-hidden="true">
     <div class="aspect ring">50</div><div class="aspect ring">50</div><div class="aspect arrow">↙</div><div class="aspect red">✕</div>
@@ -90,10 +90,12 @@
 </div></section>
 </main>
 <footer><div class="wrap">
-  <span>Sold through Lemon Squeezy, our reseller and merchant of record.</span>
+  <span>Sold by Matt Hillyard. Secure payments by Stripe.</span>
   <span><a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a> · <a href="refunds.html">Refunds</a> · <a href="credits.html">Credits</a> · <a href="mailto:plaztikman@live.com">plaztikman@live.com</a></span>
   <p class="rights">© 2026 Matt Hillyard. All Rights Reserved. Unauthorised copying, reproduction, distribution, or modification of Smartway is prohibited.</p>
 </div></footer>
+<script src="shop.js"></script>
+<script>if (SHOP.paymentLink) document.getElementById("buy-button").href = SHOP.paymentLink;</script>
 <div id="viewer" hidden><button type="button" aria-label="Close">&times;</button><img alt=""></div>
 <script>
 (function(){var v=document.getElementById('viewer'),im=v.querySelector('img');
