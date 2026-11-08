@@ -68,3 +68,32 @@ ul.credits b { color: var(--fg); }
 .keybox button:hover { border-color: var(--amber); }
 .notice { color: var(--muted); }
 .notice.error { color: var(--red); }
+
+/* multiplayer */
+.mp-pill { display: inline-flex; align-items: center; gap: 10px; margin-top: 4px; padding: 8px 16px; border: 1px solid rgba(63,214,140,.45); border-radius: 999px; background: rgba(63,214,140,.08); color: var(--fg); font-size: 15px; font-weight: 600; text-decoration: none; }
+.mp-pill:hover { border-color: var(--green); }
+.dot { width: 9px; height: 9px; border-radius: 50%; background: var(--green); box-shadow: 0 0 8px var(--green); flex: none; display: inline-block; }
+section.mp { background: linear-gradient(180deg, #0c1a17 0%, var(--bg) 100%); }
+.mp-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center; }
+.mp .eyebrow { color: var(--green); }
+.mp h2 { font-size: clamp(26px, 4vw, 36px); line-height: 1.15; margin-top: 8px; }
+section[id] { scroll-margin-top: 64px; }
+.mp-lead { font-size: 18px; color: var(--muted); margin: 0 0 18px; }
+.mp-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.mp-list li { padding-left: 26px; position: relative; color: var(--muted); font-size: 15px; }
+.mp-list li::before { content: "✓"; position: absolute; left: 0; color: var(--green); font-weight: 900; }
+.mp-list b { color: var(--fg); }
+.mp-note { color: var(--muted); font-size: 14px; margin: 16px 0 0; }
+.lobby { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 16px; box-shadow: 0 20px 50px rgba(0,0,0,.35); }
+.lobby-head { display: flex; justify-content: space-between; font-size: 12px; letter-spacing: .14em; font-weight: 700; color: var(--muted); padding: 2px 4px 12px; }
+.lobby-head .live { color: var(--green); display: flex; align-items: center; gap: 6px; }
+.room { display: flex; align-items: center; gap: 12px; padding: 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel2); margin-top: 8px; }
+.room > div { flex: 1; min-width: 0; }
+.room b { display: block; font-size: 15px; }
+.room small { color: var(--muted); font-size: 13px; }
+.room .seats { color: var(--muted); font: 600 14px/1 Consolas, monospace; }
+.room .join { background: var(--green); color: #07130e; font-weight: 800; font-size: 12px; letter-spacing: .08em; padding: 6px 10px; border-radius: 6px; }
+.room .join.lock { background: var(--amber); color: #111; }
+.room.host { border-style: dashed; background: transparent; }
+.room.host .join { background: transparent; color: var(--green); border: 1px solid var(--green); }
+@media (max-width: 820px) { .mp-grid { grid-template-columns: 1fr; } }
