@@ -8,12 +8,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=2">
+<link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
 <header class="top"><div class="wrap">
   <a class="studio-head" href="https://www.mvalix.com/" aria-label="MVALIX Interactive presents"><img src="img/mvalix-wordmark.png" alt="" width="1029" height="105"><span class="sub">Interactive</span><span class="rule"></span><span class="pres">Presents</span></a>
-  <nav><a href="index.html#multiplayer">Multiplayer</a><a href="index.html#features">Features</a><a href="index.html#buy">Buy</a><a href="refunds.html">Refunds</a><a href="mailto:plaztikman@live.com">Contact</a></nav>
+  <nav><a href="index.html#multiplayer">Multiplayer</a><a href="index.html#features">Features</a><a href="index.html#buy">Buy</a><a href="index.html#demo">Demo</a><a href="refunds.html">Refunds</a><a href="mailto:plaztikman@live.com">Contact</a></nav>
 </div></header>
 <main>
 <div class="wrap hero">
@@ -24,8 +24,10 @@
   <a class="mp-pill" href="#multiplayer"><span class="dot"></span> Online multiplayer · text and voice chat · no port forwarding</a>
   <div class="cta" id="buy">
     <a class="btn" id="buy-button" href="mailto:plaztikman@live.com?subject=Buying%20Smartway">Buy Smartway</a>
+    <a class="btn btn-ghost" id="demo" href="https://github.com/Plaztikman/smartway-site/releases/latest/download/SmartwayDemo.zip">Download free demo</a>
     <span class="price"><b>£12.99</b> · one-off payment, licence key straight away</span>
   </div>
+  <p class="demo-note">The free demo is one stretch of motorway, solo play, no licence key needed. Windows 10 or 11 (64-bit). Unzip it, then run SmartwayDemo.exe.</p>
   <div class="gantry" aria-hidden="true">
     <div class="aspect ring">50</div><div class="aspect ring">50</div><div class="aspect arrow">↙</div><div class="aspect red">✕</div>
   </div>
@@ -124,7 +126,8 @@
   <p class="rights">© 2026 Matt Hillyard. All Rights Reserved. Unauthorised copying, reproduction, distribution, or modification of Smartway is prohibited.</p>
 </div></footer>
 <script src="shop.js"></script>
-<script>if (SHOP.paymentLink) document.getElementById("buy-button").href = SHOP.paymentLink;</script>
+<script>if (SHOP.paymentLink) document.getElementById("buy-button").href = SHOP.paymentLink;
+if (SHOP.demo) document.getElementById("demo").href = SHOP.demo;</script>
 <div id="viewer" hidden><button type="button" aria-label="Close">&times;</button><img alt=""></div>
 <script>
 (function(){var v=document.getElementById('viewer'),im=v.querySelector('img');
