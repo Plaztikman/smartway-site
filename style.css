@@ -107,4 +107,4 @@ header.top { background: #000; border-bottom: 1px solid rgba(124,224,211,.6); }
 .lockup { display: flex; align-items: center; gap: 14px; }
 .lockup .studio img { height: 18px; width: auto; display: block; }
 .lockup .sep { width: 1px; height: 22px; background: #2b3540; }
-@media (max-width: 560px) { .lockup .studio img { height: 13px; } .lockup { gap: 10px; } .brand .x { display: none; } }
+@media (max-width: 560px) { .lockup .studio img { height: 13px; } .lockup { gap: 10px; } .brand .x { display: none; } header.top .wrap { height: auto; min-height: 60px; padding-top: 8px; padding-bottom: 8px; } nav { max-width: 55%; } }
