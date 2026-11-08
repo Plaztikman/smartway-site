@@ -5,5 +5,5 @@
 var SHOP = {
   paymentLink: "https://buy.stripe.com/7sY14ng8V3OV3em2s73sI00",
   worker: "https://smartway-shop.plaztikman.workers.dev",
-  download: ""   // link to the game download, shown on the thank-you page
+  download: "https://github.com/Plaztikman/smartway-site/releases/latest/download/Smartway.zip"   // link to the game download, shown on the thank-you page
 };
