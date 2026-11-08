@@ -4,6 +4,6 @@
 //   download:    where buyers download the game.
 var SHOP = {
   paymentLink: "",
-  worker: "",
+  worker: "https://smartway-shop.plaztikman.workers.dev",
   download: ""   // link to the game download, shown on the thank-you page
 };
