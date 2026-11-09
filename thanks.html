@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=2">
+<link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
 <header class="top"><div class="wrap">
@@ -25,7 +25,7 @@
   <p>When the game asks, type this email address and the key:<br><span class="email" id="email"></span></p>
   <p class="notice">We've emailed the key to you too, so you don't need to write it down. If it isn't in your inbox in a few minutes, check your junk folder.</p>
 </div>
-<div id="download" hidden><p><a class="btn" id="download-link" href="#">Download Smartway</a></p><p class="notice">Right-click the zip and choose <b>Extract All</b> before playing (it won't work from inside the zip), then open Smartway.exe. If Windows says &quot;Windows protected your PC&quot;, click <b>More info</b>, then <b>Run anyway</b>. That appears because we're a new indie studio, not because anything is wrong.</p></div>
+<div id="download" hidden><p><a class="btn" id="download-link" href="#">Download Smartway</a></p><p class="notice">This download link is yours alone (it works with your key), so please don't share it. It's in your key email too.</p><p class="notice">Right-click the zip and choose <b>Extract All</b> before playing (it won't work from inside the zip), then open Smartway.exe. If Windows says &quot;Windows protected your PC&quot;, click <b>More info</b>, then <b>Run anyway</b>. That appears because we're a new indie studio, not because anything is wrong.</p></div>
 <p>One key activates the game on one PC. If you change PC, or anything goes wrong, email <a href="mailto:plaztikman@live.com">plaztikman@live.com</a>.</p>
 </main>
 <footer><div class="wrap">
@@ -39,7 +39,6 @@
 (function () {
   var status = document.getElementById("status");
   function say(text, error) { status.textContent = text; status.className = "notice" + (error ? " error" : ""); status.hidden = false; }
-  if (SHOP.download) { document.getElementById("download-link").href = SHOP.download; document.getElementById("download").hidden = false; }
   var session = new URLSearchParams(location.search).get("session");
   if (!session || !SHOP.worker) { say("We couldn't find your order on this page. Your key has been emailed to you. If it doesn't arrive, email plaztikman@live.com."); return; }
   var tries = 0;
@@ -50,6 +49,7 @@
         if (d.key) {
           document.getElementById("key").textContent = d.key;
           document.getElementById("email").textContent = d.email;
+          if (d.download) { document.getElementById("download-link").href = d.download; document.getElementById("download").hidden = false; }
           document.getElementById("result").hidden = false;
           status.hidden = true;
         } else if (d.pending && tries++ < 10) { say(d.message); setTimeout(load, 6000); }
